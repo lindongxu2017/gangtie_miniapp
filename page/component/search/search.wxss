@@ -1,0 +1,122 @@
+.nav-box{
+	padding: 20rpx 0;
+	background: white;
+	position: fixed;
+	width: 100%;
+	top:0;
+	left: 0;
+	z-index: 200;
+}
+.nav{
+	width:40%;
+	height: 60rpx;
+	line-height: 60rpx;
+	border:2rpx solid;
+	border-radius: 10rpx;
+	color:#AF1A3A;
+	text-align: center;
+	display: flex;
+	font-size:28rpx;
+	margin:0 auto;
+}
+.nav .item{
+	width:50%;
+}
+.nav .item.active{
+	background: #AF1A3A;
+	color:white;
+}
+.list1-box{
+	padding: 120rpx 30rpx 40rpx;
+}
+.list1{
+	overflow-x: scroll;
+	display: flex;
+	align-items: center;
+}
+.list1 .item{
+	white-space:nowrap;
+	border-radius: 5rpx;
+	line-height: 54rpx;
+	box-sizing: border-box;
+	padding: 0 20rpx;
+	font-size:28rpx;
+	border:2rpx solid;
+}
+.list1 image{
+	width:36rpx;
+	min-width: 36rpx;
+	height:36rpx;
+	margin: 0 15rpx;
+}
+.minuteMoney{
+	display: flex;
+	align-items: center;
+	font-size:28rpx;
+	line-height: 1;
+	color:#212121;
+	padding:0 30rpx;
+}
+.minuteMoney .icon{
+	width:6rpx;
+	height: 6rpx;
+	border-radius: 3rpx;
+	background: #c3c3c3;
+	margin:0 20rpx;
+}
+.zhandian{
+	padding: 40rpx 20rpx;
+	display: flex;
+}
+.zhandian .iconList{
+	width:40px;
+	margin-right:5px;
+  position: relative;
+}
+.iconList .iconListTop, .iconList .iconListBottom{
+	width:6px;
+	height:6px;
+  border:2px solid;
+	border-radius:50%;
+  position: absolute;
+  z-index:1;
+  margin-left:-5px;
+  left:50%;
+}
+.iconListTop{
+	top:2px;
+}
+.iconListBottom{
+	bottom:2px;
+}
+.iconListHeight{
+  position: absolute;
+  width:2px;
+  left:50%;
+  margin-left:-1px;
+}
+.zhandian .zhandianList .item{
+	margin:16px 0;
+	font-size:14px;
+	line-height: 1;
+	color:#212121;
+}
+.zhandian .zhandianList .item.huan{
+	margin:29px 0;
+ 	position: relative;
+}
+.zhandian .zhandianList .item.huan image{
+	position: absolute;
+ 	top:50%;
+  margin-top:-20px;
+	height:40px;
+  width: 40px;
+	left:-45px;
+  z-index:100;
+}
+.zhandian .zhandianList .item:first-child{
+	margin-top: 0;
+}
+.zhandian .zhandianList .item:last-child{
+	margin-bottom: 0;
+}

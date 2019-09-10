@@ -1,0 +1,45 @@
+<view class="songhui_item_bg">
+	<image src="/image/songhui_item_bg.png" mode="aspectFill"></image>
+</view>
+<view class="songhui_item_content">
+	<view class="songhui_item_content_top">
+		<view class="info_box">
+			<view class="info_box_img">
+				<image class="info_box_img_img" src="{{detail.logo}}"></image>
+				<!-- <image class="info_box_img_box" src="/image/square_box.png"></image> -->
+			</view>
+			<view>
+				<view class="title">{{detail.name}}</view>
+				<view class="explain public_ell2">{{detail.describe}}</view>
+			</view>
+		</view>
+		<view class="info_list" >
+			<view class="info_item" >
+				<image src="/image/location2.png"></image>
+				<view>{{detail.floor_name}} {{detail.address}}</view>
+			</view>
+			<view class="info_item" >
+				<image src="/image/phone2.png"></image>
+				<view>{{detail.phone}}</view>
+			</view>
+		</view>
+	</view>
+	<view class="songhui_item_pd">
+		<image src="/image/songhui_item_pd2.png" mode="aspectFill"></image>
+	</view>
+	<view class="songhui_item_content_box">
+		<view class="title_box">
+			<image src="/image/title_icon.png"></image>
+			<view class="title">商家信息</view>
+			<image src="/image/title_icon.png"></image>
+		</view>
+		<view class="fwb">
+			<scroll-view scroll-y>
+				<view class="wxParse">
+					<import src="/wxParse/wxParse.wxml" />
+					<template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+</view>

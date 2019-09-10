@@ -1,0 +1,19 @@
+<view class="songhui_item_bg" catchtouchmove>
+	<image src="/image/songhui_item_bg.png" mode="aspectFill"></image>
+</view>
+<view class="songhui_item_content">
+	<scroll-view scroll-y bindscrolltolower="scrolltolower">
+		<view class="store_list">
+			<navigator class="store_item" wx:for="{{list}}" wx:key="{{index}}" hover-class='none' url="/page/component/store_selected_detail2/store_selected_detail2?id={{item.id}}">
+				<view class="item_img">
+					<image lazy-load class="img" src="{{item.logo}}"></image>
+					<!-- <image class="box" src="/image/square_box.png"></image> -->
+				</view>
+				<view>
+					<view class="title">{{item.name}}</view>
+					<view class="explain public_ell2">{{item.describe}}</view>
+				</view>
+			</navigator>
+		</view>
+	</scroll-view>
+</view>

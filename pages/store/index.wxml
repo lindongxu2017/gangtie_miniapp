@@ -1,0 +1,6 @@
+<!--pages/store/index.wxml-->
+<view class='list'>
+    <view class='item' wx:for="{{list}}" wx:key="{{index}}">
+        <store info="{{item}}"></store>
+    </view>
+</view>

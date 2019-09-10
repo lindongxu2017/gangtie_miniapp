@@ -1,0 +1,15 @@
+<view class="swiper-tab">
+	<view wx:for="{{navList}}" wx:key="{{index}}" class="swiper-tab-item {{currentTab==index?'active':''}}" id="{{index}}" bindtap="clickTab">{{item}}</view>
+</view>
+<view hidden='{{currentTab!=0}}'>
+	<view class="wxParse">
+		<import src="/wxParse/wxParse.wxml" />
+		<template is="wxParse" data="{{wxParseData:content1.nodes}}"/>
+	</view>
+</view>
+<view hidden='{{currentTab!=1}}'>
+	<view class="wxParse">
+		<import src="/wxParse/wxParse.wxml" />
+		<template is="wxParse" data="{{wxParseData:content2.nodes}}"/>
+	</view>
+</view>

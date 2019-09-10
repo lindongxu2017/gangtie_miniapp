@@ -1,0 +1,24 @@
+.swiper-tab{
+	display: flex;
+	justify-content: space-around;
+	background: #af1a3a;
+	font-size:28rpx;
+	line-height: 1;
+	color:white;
+}
+.swiper-tab-item{
+   padding: 27rpx 0;
+}
+.swiper-tab-item.active{
+	position: relative;
+}
+.swiper-tab-item.active::after{
+	position: absolute;
+	background: white;
+	height: 4rpx;
+	width:40rpx;
+	border-radius: 2rpx;
+	content:"";
+	bottom:11rpx;
+	left:calc(50% - 20rpx);
+}

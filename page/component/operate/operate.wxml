@@ -1,0 +1,13 @@
+<view class="operate">
+	<block wx:for="{{list}}" wx:key="{{index}}">
+		<navigator hover-class='none' url="../operateDetail/operateDetail?id={{item.id}}" class="item" bindtap="setOnLoad">
+			<view class="title public_ell2">{{item.title}}</view>
+			<view class="explain">
+				<view class="content public_ell3">{{item.describe}}</view>
+				<view><image lazy-load src="{{item.logo}}"></image></view>
+			</view>
+
+			<!-- <view class="time">{{item.created_at}}</view> -->
+		</navigator>
+	</block>
+</view>

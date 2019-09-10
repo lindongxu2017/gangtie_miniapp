@@ -1,0 +1,7 @@
+/* pages/mall_news/index.wxss */
+.list {
+    padding: 40rpx 30rpx;
+}
+.item {
+    margin-bottom: 30rpx;
+}

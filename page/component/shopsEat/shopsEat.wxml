@@ -1,0 +1,41 @@
+<view class="fixed">
+  <view class="search">
+    <image src="/image/search_ccc.png"></image>
+    <input placeholder='请输入店铺' confirm-type="search" bindinput="input" bindconfirm="search" adjust-position="false" value="{{search}}"></input>
+  </view>
+  <view class="nav-box">
+    <view class="nav1">
+      <view class="list {{navId==item.id?'active':''}}" bindtap="navTab" wx:for="{{navList}}" wx:key="{{index}}" id="{{item.id+','+index}}">{{item.name}}</view>
+    </view>
+    <view class="nav2">
+      <view class="list {{navIndex2==0?'active':''}}" bindtap="navTab2" id="0">距离最近</view>
+      <view class="list {{type==1?'active':''}}" bindtap="navTab2" id="1">店铺上新</view>
+      <!-- <view hidden="{{navList[navIndex].name=='银行'}}" class="list {{navIndex2==1?'active':''}}" bindtap="navTab2" id="1">新铺推荐</view>
+      <view hidden="{{navList[navIndex].name=='银行'}}" class="list {{navIndex2==2?'active':''}}" bindtap="navTab2" id="2">优惠活动</view> -->
+    </view>
+  </view>
+</view>
+<view class="relative">
+  <view class="sec-box">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <navigator class="sec" hover-class='none' url="../store/store?id={{item.id}}">
+        <view class='head-img'><image lazy-load src="{{item.logo}}"></image></view>
+        <view class="detail">
+          <view class="title-box">
+            <view class="title public_ell1">{{item.name}}</view>
+            <!-- <view class="distance">{{item.distance}}m</view> -->
+          </view>
+          <view class="content">
+            <view class="public_ell2">{{item.shop_addr}}</view>
+            <!-- <view class="public_ell1">{{item.code}}</view> -->
+          </view>
+          <!-- <view class="activity">
+            <view wx:if="{{item.is_special_offer!=0}}" hidden="{{navList[navIndex].name=='银行'}}" class="favorable">优惠活动</view>
+            <view wx:if="{{item.is_newshop!=0}}" hidden="{{navList[navIndex].name=='银行'}}" class="new">新铺推荐</view>
+          </view> -->
+        </view>
+      </navigator>
+    </block>
+    <view class="no-data" wx:if="{{list.length == 0}}">暂无数据</view>
+  </view>
+</view>

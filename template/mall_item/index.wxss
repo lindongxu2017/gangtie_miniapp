@@ -1,0 +1,75 @@
+/* template/mall_item/index.wxss */
+.content, .title {
+    display: flex;
+    display: -webkit-flex;
+    align-items: stretch;
+    -webkit-align-items: stretch;
+}
+.img {
+    width: 248rpx;
+    height: 200rpx;
+    border-radius: 8rpx;
+}
+.info {
+    width: 0;
+    flex: 1;
+    -webkit-flex: 1;
+    padding-left: 30rpx;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+.icon {
+    width: 40rpx;
+    height: 35rpx;
+}
+.title .text {
+    flex: 1;
+    -webkit-flex: 1;
+    width: 0;
+}
+.name {
+    font-size: 32rpx;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    margin-bottom: 5rpx;
+}
+.subtitle, .distance, .no-discount, .discount {
+    font-size: 24rpx;
+    color: #ccc;
+}
+.subtitle {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.name .distance {
+    padding-top: 10rpx;
+    font-weight: normal;
+}
+.discount {
+    color: #AB1D3B;
+    margin-top: 30rpx;
+}
+.addr-wrapper {
+    color: #666;
+    font-size: 24rpx;
+    display: flex;
+    margin-bottom: 10rpx;
+}
+.addr {
+    flex: 1;
+    -webkit-flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

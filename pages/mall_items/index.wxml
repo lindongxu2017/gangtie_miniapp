@@ -1,0 +1,28 @@
+<!--pages/mall-detail/index.wxml-->
+<view class='list'>
+    <view class='item'>
+        <image class='banner' src='{{info.img_url}}'></image>
+        <view class='title'>
+            <view class='name'>{{info.title}}</view>
+            <view class='intro'>{{info.sub_title}}</view>
+        </view>
+        <view class='addr'>
+            <image class='icon' src='/icon/aui-icon-location.png'></image>
+            <view>地址：</view>
+            <view class='text'>{{info.address}}</view>
+        </view>
+    </view>
+</view>
+
+<view class='tab-wrapper'>
+    <view class='tab'>
+        <view class='tab-item {{tabActive == 0 ? "active" : ""}}' data-index="0" bindtap='switchTab'>游玩攻略</view>
+        <view class='tab-item {{tabActive == 1 ? "active" : ""}}' data-index="1" bindtap='switchTab'>详情介绍</view>
+    </view>
+</view>
+
+<view class='content'>
+    <!-- <view class='cell-title'>30分钟逛遍圆方</view> -->
+    <rich-text class='desc' wx:if="{{tabActive == 0}}" nodes="{{info.tour}}"></rich-text>
+    <rich-text class='desc' wx:if="{{tabActive == 1}}" nodes="{{info.detail}}"></rich-text>
+</view>

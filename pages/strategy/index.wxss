@@ -1,0 +1,4 @@
+/* pages/strategy/index.wxss */
+.content {
+    padding: 30rpx;
+}

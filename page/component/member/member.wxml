@@ -1,0 +1,6 @@
+<!-- <web-view src="http://wxapp.tech-trans.com.cn/Mtrsz_ui"></web-view> -->
+<image class="bg" src="/image/songhui_item2_bg.png" mode="aspectFill"></image>
+<view class="qrcode_box">
+	<image class="qrcode" src="{{src}}" bindtap="previewImage"></image>
+	<view>请保存图片并扫码关注颂荟公众号，点击“会员专区”注册成为会员获取更多福利</view>
+</view>	

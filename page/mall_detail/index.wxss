@@ -1,0 +1,18 @@
+/* pages/mall_detail/index.wxss */
+@import '../mall/index.wxss';
+.list2 {
+    padding: 28rpx 7rpx;
+    font-size: 0;
+}
+.item2 {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 21rpx;
+}
+.cell-title {
+    padding: 0 30rpx;
+    font-size: 32rpx;
+    color: #333;
+    font-weight: bold;
+}

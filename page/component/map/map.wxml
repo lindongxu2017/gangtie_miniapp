@@ -1,0 +1,9 @@
+<map id="myMap" longitude="{{lng}}" latitude="{{lat}}" markers="{{markers}}" polyline="{{polyline}}" include-points="{{markers}}" show-location bindmarkertap="markertap" scale="{{scale}}"></map>
+<cover-view class="search_box" bindtap="to_search">
+	<cover-image class="search_icon" src="/image/search_ccc.png"></cover-image>
+	<cover-view class="input {{keyword.length > 0 ? 'color' : ''}}">{{keyword.length > 0 ? keyword : '搜索地点、公交、地铁'}}</cover-view>
+</cover-view>
+<cover-view class="location" bindtap="location">
+	<cover-image src='/image/map_location.png'></cover-image>
+</cover-view>
+<!-- <web-view src="https://gangtie.qinhantangtop.com/map/#/"></web-view> -->

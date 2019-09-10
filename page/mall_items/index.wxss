@@ -1,0 +1,29 @@
+/* pages/mall-detail/index.wxss */
+@import '../mall/index.wxss';
+.tab-wrapper {
+    padding: 0 30rpx;
+}
+.tab {
+    display: flex;
+    display: -webkit-flex;
+    border: 1px solid #AB1D3B;
+    border-radius: 8rpx;
+}
+.tab-item {
+    flex: 1;
+    -webkit-flex: 1;
+    text-align: center;
+    line-height: 87rpx;
+    font-size: 36rpx;
+    color: #333333;
+}
+.tab-item.active {
+    color: #FCFCFC;
+    background-color: #AB1D3B;
+}
+.content {
+    padding: 30rpx;
+}
+.cell-title {
+    margin-bottom: 27rpx;
+}

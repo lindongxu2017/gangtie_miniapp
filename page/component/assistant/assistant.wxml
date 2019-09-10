@@ -1,0 +1,34 @@
+ <scroll-view scroll-y id="scrollView" style="height:{{windowHeight - keyHeight - 50}}px;margin-top:{{keyHeight}}px;" scroll-top="{{scrollTop}}">
+  <view id="scroll">
+    <block wx:for="{{message}}" wx:key="{{index}}">
+      <view class="sec2 sec" wx:if="{{item.isUser}}">
+        <view class="message">
+          <view>{{item.content}}</view>
+        </view>
+        <view class="head">
+          <image src="{{item.url}}"></image>
+        </view>
+      </view>
+      <view class="sec1 sec" wx:else>
+        <view class="head">
+          <image src="{{item.url}}"></image>
+        </view>
+        <view class="message">
+          <view>
+            <!-- <navigator hover-class='none' url="{{item.path}}">
+              <text class="{{item.path?'navigator':''}}">{{item.content}}</text>
+            </navigator> -->
+            <text data-item="{{item}}" catchtap="route" class="{{item.path?'navigator':''}}">{{item.content}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+<view class="message-box">
+	<view class="message-input">
+		<input bindfocus="focus" bindblur="blur" confirm-hold confirm-type="send" bindinput="input" value="{{value}}" bindconfirm="sendOut" cursor-spacing="8"></input>
+    	<view class="input-bg"></view>
+		<view class="sendOut" bindtap="sendOut">发送</view>
+	</view>
+</view>

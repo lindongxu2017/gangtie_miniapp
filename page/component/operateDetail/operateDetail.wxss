@@ -1,0 +1,24 @@
+.title{
+	text-align: center;
+	font-size:40rpx;
+	color:#4a4a4a;
+	line-height: 50rpx;
+	padding: 0 30rpx;
+	margin-top: 45rpx;
+	margin-bottom:25rpx;
+	font-family:PingFang-SC-Bold;
+}
+.time{
+	text-align: center;
+	font-size:26rpx;
+	color:#c1c1c1;
+	padding: 0 30rpx;
+	margin-bottom:40rpx;
+}
+.content{
+	text-align: center;
+	font-size:30rpx;
+	padding: 0 30rpx;
+	line-height: 48rpx;
+	color:#616161;
+}

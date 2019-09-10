@@ -1,0 +1,13 @@
+<view class="songhui_item_bg">
+	<image src="/image/songhui_item_bg.png" mode="aspectFill"></image>
+</view>
+<view class="songhui_item_content">
+	<view class="songhui_item_content_box">
+		<view class="title">{{detail.title}}</view>
+		<view class="time">{{detail.release_time}}</view>
+		<view class="wxParse">
+			<import src="/wxParse/wxParse.wxml" />
+			<template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+		</view>
+	</view>
+</view>

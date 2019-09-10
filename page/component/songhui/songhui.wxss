@@ -1,0 +1,82 @@
+.songhui_bg, .songhui_title, .songhui_index_box, .songhui_index{
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+.songhui_bg{
+	background:url(https://gangtie.qinhantangtop.com/public/images/background1.png) no-repeat center bottom/cover;
+	z-index:1;
+}
+.songhui_bg .logo{
+	height:44rpx;
+	width:200rpx;
+	position:absolute;
+	right:25rpx;
+	bottom:11rpx;
+}
+.songhui_title{
+	z-index:2;
+	height:90rpx;
+	padding:30rpx;
+	padding-top:20rpx;
+	bottom:auto;
+}
+.songhui_title image{
+	width:304rpx;
+	height:90rpx;
+	display:block;
+}
+.songhui_index_box{
+	padding:140rpx 40rpx 0;
+	z-index:2;
+}
+.songhui_index_box_top{
+	border:15rpx solid white;
+	border-bottom:none;
+	border-top-left-radius:20rpx;
+	border-top-right-radius:20rpx;
+	height:300rpx;
+}
+.songhui_index_box_bottom{
+	position:relative;
+}
+.songhui_index_box_bottom_left, .songhui_index_box_bottom_right{
+	width:15rpx;
+	position:absolute;
+	top:0;
+	height:500rpx;
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+.songhui_index_box_bottom_left{
+	left:0;
+}
+.songhui_index_box_bottom_right{
+	right:0;
+}
+.songhui_index{
+	padding:165rpx 55rpx 0;
+	z-index:3;
+}
+.songhui_list{
+	bottom:auto;
+	display:flex;
+	flex-wrap:wrap;
+}
+.songhui_item{
+	flex:1;
+	min-width:33%;
+	text-align:center;
+	color:#1d1d1d;
+	font-size:28rpx;
+	line-height:1;
+	margin:30rpx 0 20rpx;
+	height:140rpx;
+}
+.songhui_item image{
+	width:90rpx;
+	height:90rpx;
+	display:block;
+	margin:0 auto 20rpx;
+}

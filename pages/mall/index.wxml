@@ -1,0 +1,19 @@
+<!--pages/mall/index.wxml-->
+<view class='list'>
+    <view class='item' wx:for="{{list}}" wx:key="{{index}}" data-item="{{item}}" bindtap="godetail">
+        <image class='banner' src='{{item.img_url}}'></image>
+        <view class="flex-wrapper">
+            <view class='title'>
+                <view class='name'>{{item.title}}</view>
+                <view class='intro'>{{item.sub_title}}</view>
+            </view>
+            <view data-id="{{item.market_id}}" class="link" catchtap="golink">游玩攻略</view>
+        </view>
+        <view class='addr'>
+            <image class='icon' src='/icon/aui-icon-location.png'></image>
+            <view>地址：</view>
+            <view class='text'>{{item.address}}</view>
+        </view>
+        <rich-text class='desc' nodes="{{item.intro}}"></rich-text>
+    </view>
+</view>

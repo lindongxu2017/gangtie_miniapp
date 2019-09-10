@@ -1,0 +1,22 @@
+<!--template/mall_item/index.wxml-->
+<view class='content' bindtap="godetail">
+    <image class='img' mode='aspectFill' src='{{info.logo}}'></image>
+    <view class='info'>
+        <view class='title'>
+            <view class='text'>
+                <view class='name'>
+                    <view class="name-text">{{info.name}}</view>
+                    <view class='distance'>{{info.distance || 0}}m</view>
+                </view>
+                <view class='subtitle'>{{info.intro}}</view>
+            </view>
+        </view>
+        <view class='no-discount' wx:if="{{info.discount == ''}}">优惠信息：暂无</view>
+        <view class='discount' wx:else>优惠信息：{{info.coupon[0].title}}</view>
+        <view class='addr-wrapper'>
+            <image class='icon' src='/icon/aui-icon-location.png'></image>
+            <view class='lable'>地址：</view>
+            <view class='addr'>{{info.address}}</view>
+        </view>
+    </view>
+</view>

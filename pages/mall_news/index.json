@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "mall": "/template/mall_item/index"
+    },
+    "navigationBarTitleText": "店铺上新"
+}

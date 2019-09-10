@@ -1,0 +1,13 @@
+<view class="userinfo">
+  <view>
+    <image src="{{userInfo.avatarUrl}}"></image>
+  </view>
+  <view class="name">{{userInfo.nickName}}</view>
+</view>
+<view class="flex-box">
+  <view>优惠券</view>
+  <view style="flex:1;"></view>
+  <view class="right">
+    <image src="../../../image/right.png"></image>
+  </view>
+</view>

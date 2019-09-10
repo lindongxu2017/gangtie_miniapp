@@ -1,0 +1,62 @@
+ <swiper indicator-dots autoplay circular interval="4000" duration="1000">
+	<swiper-item bindtap="previewImage" wx:for="{{mapList}}" wx:key="{{index}}">
+		<image src="{{item.image}}"></image>
+	</swiper-item>
+</swiper>
+<view style="position:{{position}};" class="position">
+  <view class='type-flex'>
+    <block wx:for="{{navList}}" wx:key="{{index}}">
+      <navigator url="{{item.url}}" hover-class="none" wx:if="{{item.id == 'discount'}}">
+        <image src="{{item.logo}}"></image>
+        <view>{{item.name}}</view>
+      </navigator>
+
+      <navigator wx:else url="../shopsEat/shopsEat?eatType={{item.id}}&station_id={{station_id}}&brand_id={{brand_id}}" hover-class="none">
+        <image src="{{item.logo}}"></image>
+        <view>{{item.name}}</view>
+      </navigator>
+    </block>
+  </view>
+	<view class="hint">以下信息仅供参考，详情以实际为准</view>
+
+  <view class="nav">
+	<view class="item">
+      <picker bindchange="bindPickerChange" value="{{siteArrIndex}}" range="{{siteArr}}">
+        <view class="picker">
+        	{{station_name}}<image src="/image/picker.png"></image>
+        </view>
+      </picker>
+    </view>
+    <!-- <view class="item">
+      <picker bindchange="bindPickerChange2" value="{{brand_index}}" range="{{brandPicker}}">
+        <view class="picker">
+          {{brandList[brand_index].name}}<image src="/image/picker.png"></image>
+        </view>
+      </picker>
+    </view> -->
+  </view>
+</view>
+
+<view class="relative" style="padding-top:{{position=='relative'?0:378}}rpx;">
+  <view class="sec-box">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <navigator class="sec" hover-class='none' url="../store/store?id={{item.id}}&station_id={{station_id}}">
+        <view class='head-img'><image lazy-load src="{{item.logo}}"></image></view>
+        <view class="detail">
+          <view class="title-box">
+            <view class="title public_ell1">{{item.name}}</view>
+            <!-- <view class="distance">{{item.distance}}m</view> -->
+          </view>
+          <view class="content">
+        <view class="public_ell2">{{item.shop_addr}}</view>
+        <!-- <view class="public_ell1">{{item.code}}</view> -->
+      </view>
+          <!-- <view class="activity">
+            <view wx:if="{{item.is_special_offer!=0}}" class="favorable">优惠活动</view>
+            <view wx:if="{{item.is_newshop!=0}}" class="new">新铺推荐</view>
+          </view> -->
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<!--template/store_item/index.wxml-->
+<view class='content' bindtap="godetail">
+    <view class='img-wrapper'>
+        <image class='img' src='{{info.img_url}}'></image>
+    </view>
+    <view class='info'>
+        <view class='title'>{{info.name}}</view>
+        <view class='items'>
+            <view class='lable'>简介：{{info.intro || '暂无'}}</view>
+            <view class='value'></view>
+        </view>
+        <view class='items'>
+            <view class='lable'>地址：</view>
+            <view class='value'>{{info.address}}</view>
+        </view>
+    </view>
+</view>

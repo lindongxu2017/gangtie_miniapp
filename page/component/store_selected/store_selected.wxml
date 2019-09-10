@@ -1,0 +1,50 @@
+<view class="prevent_roll" catchtouchmove></view>
+<swiper indicator-dots autoplay circular interval="4000" duration="1000">
+	<swiper-item bindtap="previewImage" wx:for="{{mapList}}" wx:key="{{index}}">
+		<image src="{{item.image}}"></image>
+	</swiper-item>
+</swiper>
+<view class="songhui_item_bg">
+	<image src="/image/songhui_item2_bg.png" mode="aspectFill"></image>
+</view>
+<view class="songhui_item_content">
+	<view class="wuyu">
+		<view class="wxyu_left">
+			<image src="/image/left_aaa.png"></image>
+		</view>
+		<scroll-view scroll-x bindscrolltolower="bindscrolltolower">
+			<view class="songhui_item_content_top brand_list" style="width:{{254 * brand_list.length}}rpx;">
+				<navigator class="brand_item" wx:for="{{brand_list}}" wx:key="{{index}}" hover-class='none' url="/page/component/store_selected_detail2/store_selected_detail2?id={{item.id}}">
+					<view class="brand_img">
+						<image class="img" src="{{item.logo}}" lazy-load></image>
+						<!-- <image class="box" src="/image/square_box.png"></image> -->
+					</view>
+					<view class="name">{{item.name}}</view>
+					<view class="explain public_ell2">{{item.describe}}</view>
+				</navigator>
+			</view>
+		</scroll-view>
+		<view class="wxyu_right">
+			<image src="/image/right_aaa.png"></image>
+		</view>
+	</view>
+	<view class="songhui_item_pd">
+		<image src="/image/songhui_item_pd.png" mode="aspectFill"></image>
+	</view>
+	<view class="songhui_item_content_bottom">
+		<view class="store_list">
+			<scroll-view scroll-y bindscrolltolower="scrolltolower">
+				<navigator class="store_item" wx:for="{{list}}" wx:key="{{index}}" url="/page/component/store_selected_detail/store_selected_detail?id={{item.id}}" hover-class="none" wx:if="{{list.length > 0}}">
+					<view class="item_img" wx:if="{{item.logo_list.length > 0}}">
+						<image class="img" src="{{item.logo_list[0]}}" lazy-load></image>
+						<!-- <image class="box" src="/image/square_box.png"></image> -->
+					</view>
+					<view>
+						<view class="title">{{item.title}}</view>
+						<view class="explain public_ell2">{{item.describe}}</view>
+					</view>
+				</navigator>
+			</scroll-view>
+		</view>
+	</view>
+</view>

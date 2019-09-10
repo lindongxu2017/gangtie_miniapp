@@ -1,0 +1,61 @@
+/* pages/mall/index.wxss */
+.list {
+    padding: 53rpx 30rpx;
+}
+.item {
+    margin-bottom: 56rpx;
+}
+.banner {
+    width: 100%;
+    display: block;
+    margin-bottom: 25rpx;
+}
+.title {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+}
+.name {
+    font-size: 36rpx;
+    color: #333;
+    font-weight: bold;
+    margin-right: 25rpx;
+}
+.intro {
+    font-size: 24rpx;
+    color: #ccc;
+}
+.addr {
+    display: flex;
+    display: -webkit-flex;
+    font-size: 28rpx;
+    color: #ccc;
+    margin-bottom: 27rpx;
+}
+.addr .icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+.text {
+    flex: 1;
+    -webkit-flex: 1;
+}
+.desc {
+    font-size: 24rpx;
+    color: #ccc;
+}
+.flex-wrapper {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    align-items: center;
+    -webkit-align-items: center;
+    margin-bottom: 24rpx;
+}
+
+.flex-wrapper .link {
+    font-size: 28rpx;
+    color: #AF1A3A;
+}

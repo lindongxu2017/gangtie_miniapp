@@ -1,0 +1,38 @@
+page{
+    background: white;
+}
+.suggest{
+    margin:40rpx 40rpx 120rpx;
+    border:1px solid #ccc;
+	border-radius: 10rpx;
+}
+.input{
+	margin:40rpx;
+	padding:16rpx;
+	border:1px solid #ccc;
+	border-radius: 10rpx;
+	font-size:32rpx;
+	color:#333;
+}
+.input input{
+	width:100%;
+}
+.suggest .content{
+	padding:10rpx 16rpx;
+}
+.suggest textarea{
+    width:100%;
+    height:240rpx;
+	color:#333;
+	font-size:32rpx;
+}
+.forget{
+    text-align: center;
+    font-size:32rpx;
+}
+.forget text{
+    background: #af1a3a;
+    padding:15rpx 80rpx;
+    border-radius:10rpx;
+	color:white;
+}

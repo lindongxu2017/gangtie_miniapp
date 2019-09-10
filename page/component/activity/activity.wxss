@@ -1,0 +1,41 @@
+page{
+  background:#f4f4f4;
+}
+swiper{
+	height:380rpx;
+}
+swiper image{
+	width:100%;
+	height:100%;
+}
+.activity{
+	word-break: break-all;
+}
+.item{
+	margin:40rpx 40rpx;
+	padding:20rpx 30rpx;
+	border-radius:10rpx;
+	box-shadow:10rpx 2rpx 10rpx rgba(175,26,58,0.04);
+	background: #fff;
+}
+.item .title{
+	font-size:36rpx;
+	color:#333;
+	line-height: 48rpx;
+	margin-bottom:10rpx;
+}
+.item .explain{
+	display: flex;
+}
+.item .explain image{
+	height: 120rpx;
+	width:120rpx;
+	margin-left:30rpx;
+}
+.item .explain .content{
+	font-size:30rpx;
+	flex:1;
+	height: 120rpx;
+	line-height: 40rpx;
+	color:#999;
+}

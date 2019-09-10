@@ -1,0 +1,147 @@
+page {
+    background: #fff;
+}
+
+#scroll {
+    padding: 15px 0;
+}
+
+.sec {
+    margin: 0 20rpx 30rpx;
+    display: flex;
+}
+
+.sec:last-child {
+    margin-bottom: 0;
+}
+
+.sec2 {
+    justify-content: flex-end;
+}
+
+.sec .head {
+    width: 80rpx;
+    height: 80rpx;
+    min-width: 80rpx;
+}
+
+.sec .head image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+
+.sec .message view {
+    font-size: 30rpx;
+    border-radius: 24rpx 8rpx;
+    max-width: 470rpx;
+    padding: 20rpx;
+    line-height: 36rpx;
+    word-break: break-all;
+    position: relative;
+    box-shadow:0px 0px 30px 0px rgba(36,2,9,0.2);
+}
+
+.sec1 .message view {
+    background: rgba(254, 250, 251, 1);
+    color: rgba(171, 29, 59, 1);
+    margin-left: 20rpx;
+}
+
+.sec2 .message view {
+    background: #af1a3a;
+    color: white;
+    margin-right: 20rpx;
+}
+
+.sec .message view:after, .sec .message view:before {
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    position: absolute;
+}
+
+.sec1 .message view:after, .sec1 .message view:before {
+    right: 100%;
+}
+
+.sec2 .message view:after, .sec2 .message view:before {
+    left: 100%;
+}
+
+.sec .message view:after {
+    border-width: 10rpx;
+    top: 30rpx;
+}
+
+.sec .message view:before {
+    border-width: 12rpx;
+    top: 28rpx;
+}
+
+.sec1 .message view:after {
+    border-right-color: #fff;
+}
+
+.sec2 .message view:after {
+    border-left-color: #af1a3a;
+}
+
+.sec1 .message view:before {
+    border-right-color: #ccc;
+}
+
+.sec2 .message view:before {
+    border-left-color: #ccc;
+}
+
+.message-box {
+    /* position:fixed;
+    bottom:0; */
+    width: calc(100% - 60rpx);
+    padding: 8px 30rpx;
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+.message-box .message-input {
+    height: 34px;
+    position: relative;
+}
+
+.message-box .message-input input {
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    height: 34px;
+    line-height: 34px;
+    color: #333;
+    padding: 0 170rpx 0 10rpx;
+    font-size: 28rpx;
+}
+
+.message-box .message-input .input-bg {
+    position: absolute;
+    width: calc(100% - 160rpx);
+    border-radius: 10rpx;
+    height: 34px;
+    background: #f2f2f2;
+}
+
+.message-box .message-input .sendOut {
+    position: absolute;
+    font-size: 30rpx;
+    color: white;
+    height: 34px;
+    line-height: 34px;
+    width: 140rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    background: #af1a3a;
+    right: 0;
+}
+
+.sec .message view .navigator {
+    color: #50c332;
+    text-decoration: underline;
+}

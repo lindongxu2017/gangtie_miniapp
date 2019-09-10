@@ -1,0 +1,27 @@
+<!--pages/mall-detail/index.wxml-->
+<view class='list'>
+    <view class='item'>
+        <image class='banner' src='{{info.img}}'></image>
+        <view class='title'>
+            <view class='name'>{{info.name}}</view>
+            <view class='intro'>{{info.intro}}</view>
+        </view>
+        <view class='addr'>
+            <image class='icon' src='/icon/aui-icon-location.png'></image>
+            <view>地址：</view>
+            <view class='text'>{{info.addr}}</view>
+        </view>
+    </view>
+</view>
+
+<view class='tab-wrapper'>
+    <view class='tab'>
+        <view class='tab-item {{tabActive == 0 ? "active" : ""}}' data-index="0" bindtap='switchTab'>游玩攻略</view>
+        <view class='tab-item {{tabActive == 1 ? "active" : ""}}' data-index="1" bindtap='switchTab'>详情介绍</view>
+    </view>
+</view>
+
+<view class='content'>
+    <view class='cell-title'>30分钟逛遍圆方</view>
+    <view class='desc'>亲身体验了才有发言权，这次去是直接找到香港当地口碑最好的阿茶导游提前安排的，从接飞机到吃、住，游、娱这一系列的全都安排的很细致，精华景点玩了个遍，吃的是特色饮食，住的也非常好，还有导游，24小时服务，并且全程没有购物和套路，四天人均花费1000多点，关键还省不少事，这趟玩的特开心，出门旅行就得找这种当地一手资源，专业，实惠，接待品质确实不错，想去玩的可以联系。</view>
+</view>

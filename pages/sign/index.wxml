@@ -1,0 +1,54 @@
+<!--pages/sign/index.wxml-->
+<view class='header'>
+    <image class='bg' src='/icon/sign_bg.png'></image>
+    <view class='content'>
+        <view class='money'>{{current_score}}</view>
+        <view class='lable'>当前积分</view>
+        <view class='btn {{is_sign ? "signed" : ""}}' bindtap='sign'>{{is_sign ? '已签到成功' : '签到抽好礼'}}</view>
+        <view class='tips'>连续签到有更多惊喜</view>
+    </view>
+</view>
+
+<view class='line'>
+    <view class='line-bar' style='left: {{(signed_day >=7 ? 7 : signed_day ) * 100 / 7  + "%"}}'></view>
+</view>
+
+<view class='days'>
+    <view class='item {{index <= signed_day - 1 ? "signed" : ""}}' wx:for="{{recode}}" wx:key="{{index}}">+{{item.integral}}</view>
+</view>
+<view class='days no-top'>
+    <view class='days-text' wx:for="{{7}}" wx:key="{{index}}">{{item + 1}}天</view>
+</view>
+
+<view class='cell-title'>
+    <view class='text'>签到领取积分规则</view>
+    <view class='operation' bindtap="luckdraw">
+        <image src="/icon/gift.png"></image>
+        <text>立即抽奖</text>
+    </view>
+</view>
+
+<!-- <view class='prize-list'>
+    <view wx:for="{{goodslist}}" wx:key="{{index}}" class='prize-item'>
+        <image class='prize-img' src='{{item.goods_img}}'></image>
+        <view class='info'>
+            <view class='name'>{{item.name}}</view>
+        </view>
+    </view>
+</view> -->
+
+<view class="rules">
+    <rich-text nodes="{{rules}}"></rich-text>
+</view>
+
+<view class='mask' catchtouchmove='{{false}}' wx:if="{{show_popup}}">
+    <view class='popup-wrapper'>
+        <image src='/icon/popup.png' mode='widthFix'></image>
+        <view class='popup-content'>
+            <view class='success'>签到成功</view>
+            <view class='success-tips'>累计签到{{signed_day}}天，今日+{{signed_score}}积分</view>
+            <view class='confirm' bindtap='closePopup'></view>
+            <view class='close' bindtap='closePopup'><view></view></view>
+        </view>
+    </view>
+</view>

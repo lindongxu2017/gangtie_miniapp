@@ -1,0 +1,23 @@
+<!--pages/mall-detail/index.wxml-->
+<view class='list'>
+    <view class='item'>
+        <image class='banner' src='{{info.img_url}}'></image>
+        <view class='title'>
+            <view class='name'>{{info.title}}</view>
+            <view class='intro'>{{info.sub_title}}</view>
+        </view>
+        <view class='addr'>
+            <image class='icon' src='/icon/aui-icon-location.png'></image>
+            <view>地址：</view>
+            <view class='text'>{{info.address}}</view>
+        </view>
+        <rich-text class='desc' nodes="{{item.intro}}"></rich-text>
+    </view>
+</view>
+
+<view class="cell-title" wx:if="{{list.length > 0}}">商超商铺</view>
+<view class='list2'>
+    <view class='item2' wx:for="{{list}}" wx:key="{{index}}">
+        <store info="{{item}}"></store>
+    </view>
+</view>

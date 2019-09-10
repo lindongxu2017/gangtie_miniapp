@@ -1,0 +1,37 @@
+<view class="nav-box">
+	<view class="nav">
+		<view class="item {{type==item.type?'active':''}}" bindtap="typeTab" wx:for="{{typeList}}" wx:key id="{{item.type}}">{{item.title}}</view>
+	</view>
+</view>
+<view wx:if="{{info.length!=0}}">
+	<view class="list1-box">
+		<view class="list1">
+			<block wx:for="{{arrs}}" wx:key="{{index}}">
+				<view class="item" style="color:{{item.color}};">{{item.line}}</view>
+				<image wx:if="{{index != arrs.length - 1}}" src="/image/right_b2.png"></image>
+			</block>
+		</view>
+	</view>
+	<view class="minuteMoney">
+		<view class="length">共{{info.length - 1}}站</view>
+		<view class="icon"></view>
+		<view class="minute">预计用时约{{time}}分钟</view>
+		<view class="icon"></view>
+		<view class="money">票价{{price}}元</view>
+	</view>
+	<view class="zhandian">
+		<view class="iconList">
+			<view class="iconListTop" style="color:{{arrs[0].color}}"></view>
+      <block wx:for="{{arrs}}" wx:key="{{index}}">
+        <view class="iconListHeight" style="background:{{item.color}};height:{{item.height}}px;top:{{item.top}}px;"></view>
+			</block>
+      <view class="iconListBottom" style="color:{{arrs[arrs.length - 1].color}}"></view>
+		</view>
+		<view class="zhandianList">
+			<block wx:for="{{info}}" wx:key="{{index}}">
+        		<navigator url="../stationInfo/stationInfo?station_id={{item.station_id}}" hover-class='none' class="item huan" wx:if="{{item.type==4}}">{{item.name}}{{item.direction}}<image src="/image/huancheng.png"></image></navigator>
+				<navigator url="../stationInfo/stationInfo?station_id={{item.station_id}}" hover-class='none' class="item" wx:else>{{item.name}}{{item.type==2?item.direction:''}}</navigator>
+      		</block>
+		</view>
+	</view>
+</view>

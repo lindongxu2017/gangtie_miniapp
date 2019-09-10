@@ -1,0 +1,14 @@
+<view class="input">
+	<input placeholder='请输入您的姓名' placeholder-style='color:#999;' bindinput="nameInput" value='{{nameValue}}'></input>
+</view>
+<view class="input">
+	<input placeholder='请输入您的手机号码' placeholder-style='color:#999;' bindinput="phoneInput" value='{{phoneValue}}'></input>
+</view>
+<view class="suggest" >
+   	<view class="content">
+        <textarea placeholder='请输入您的宝贵意见' placeholder-style='color:#999;' bindinput='contentInput' value='{{contentValue}}' bindconfirm="submit"></textarea>
+  	</view>
+</view>
+<view class="forget">
+    <text bindtap="submit">提交</text>
+</view>

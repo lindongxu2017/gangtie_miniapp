@@ -1,0 +1,6 @@
+<view class="title">{{currentActivity.title}}</view>
+<view class="time">{{currentActivity.release_time}}</view>
+<view class="wxParse">
+	<import src="../../../wxParse/wxParse.wxml" />
+	<template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+</view>

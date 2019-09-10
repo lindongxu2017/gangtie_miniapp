@@ -1,0 +1,5 @@
+.tel_list_page{padding:100rpx 30rpx 0;}
+.tel_list{border-top:1rpx solid #666;}
+.tel_item{border:1rpx solid #666;border-top:none;display:flex;display:-webkit-flex;line-height:60rpx;}
+.tel_item_title{flex:1;border-right:1rpx solid #666;font-size:26rpx;padding-left:20rpx;box-sizing:border-box;}
+.tel_item_number{flex:1;font-size:26rpx;text-align: center;text-decoration:underline;}

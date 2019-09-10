@@ -1,0 +1,253 @@
+.main{
+	 padding-bottom: 80rpx;
+}
+.swiper-tab{
+	display: flex;
+	justify-content: space-around;
+	background: #af1a3a;
+	font-size:28rpx;
+	line-height: 1;
+	color:white;
+	height:80rpx;
+}
+.swiper-tab-item{
+   padding: 27rpx 0;
+}
+.swiper-tab-item.active{
+	position: relative;
+}
+.swiper-tab-item.active::after{
+	position: absolute;
+	background: white;
+	height: 4rpx;
+	width:40rpx;
+	border-radius: 2rpx;
+	content:"";
+	bottom:11rpx;
+	left:calc(50% - 20rpx);
+}
+.tabcont{margin:20rpx 10rpx; height:100%;}
+
+.tabcont2{margin:50rpx 30rpx 0;}
+.tabtit{margin:16rpx 0px; text-align: center; font-size: 28rpx;}
+.picker{height:36rpx;line-height:36rpx; padding:27rpx 30rpx; font-size: 28rpx; background:#f6f6f6;border-radius:10rpx;margin-bottom:50rpx;}
+
+.cxbtn{
+	font-size:30rpx;
+	background-color: #af1a3a;
+	color:white;
+	height: 80rpx;
+	line-height: 80rpx;
+	border-radius: 10rpx;
+	text-align: center;
+}
+.cxbtn image{
+	width:34rpx;
+	height:34rpx;
+	margin-right: 13rpx;
+	vertical-align: middle;
+	margin-top: -2rpx;
+}
+
+.cxinfo{ margin-top: 30rpx; font-size: 30rpx;}
+.cxinfo.red{color:red;}
+.dlist{ margin: 16rpx 0;}
+
+panel{
+  height:25vh;
+  background:#fff;
+}
+
+#panel text{
+  line-height: 5vh;
+  font-size: 26rpx;
+  border-right: 1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
+}
+.tt{background: #fa405f; color: #fff;}
+.sm{ width: 100%;}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.flex-cell{
+  flex: 1;
+}
+
+
+.cart-no-data{
+  padding: 20rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #666;
+}
+.orders-list{
+  margin-top: 20rpx;
+  padding:20rpx 20rpx 10rpx;
+  background: #fff;
+}
+.orders-list .cart-thumb{
+    position: relative; 
+    float:left;
+    margin-right: 10rpx;
+    width: 180rpx;
+    height: 150rpx;
+    padding: 4rpx;
+}
+
+.orders-detail{float:left; margin: 10rpx 0; padding:0px 0 20rpx 0; width: 100%; border-bottom: 1rpx solid #eee;}
+.orders-number{ margin-bottom: 20rpx; padding:0px 0 20rpx 0; font-size: 24rpx; color: #666; border-bottom: 1rpx solid #eee;}
+.pname{float:left; width: 60%; padding:10rpx 0; font-size: 28rpx; color: #333;}
+.quantity{ float:right; padding:10rpx 0; font-size: 24rpx; color: #999;}
+.number{padding:10rpx 0; font-size: 24rpx; color: #e9536b;}
+
+.obligation{float:right; padding:10rpx 0; font-size: 26rpx; color: #e9536b;}
+
+.shishou{padding:16rpx 0; }
+
+.wlisit{ padding: 10rpx;}
+.wlisit .wltime{ padding-right: 10rpx; color: #e9536b;}
+
+.wlisit2{ padding: 10rpx; color: #09b706;}
+.wlisit2 .wltime{ padding-right: 10rpx; color: #e9536b;}
+
+.orders-footer {padding:20rpx 0; font-size: 26rpx;}
+.orders-footer text{ margin-right: 20rpx; color:#666;}
+
+.orders-btn{ display: block; margin: 10rpx10rpx 10rpx 0; padding: 0; color:#555; /*border:1px solid #e9536b;*/ background: #fff;}
+
+.anniu{ padding-top: 10rpx; text-align: right; position:relative;}
+
+.spacing text{ padding: 0 6rpx;}
+
+.totalling{padding-top:50rpx;}
+
+
+
+.map_container{
+    position: fixed; 
+    top:80rpx;
+	bottom:0; 
+    width: 100%;
+    z-index: 9;
+} 
+.map { 
+    height: 100%; 
+    width: 100%; 
+} 
+.foot{
+  position: fixed;
+  width: 100%;
+  bottom:0;
+}
+
+
+/* 客服电话 */
+.kufuHead{
+	height:164rpx;
+	background-color: #AF1A3A;
+	position: relative;	
+}
+.kufuHead:before{
+	width:0;
+	height: 70rpx;
+	position: absolute;
+	content: "";
+	left:50%;
+	border-right:2rpx dashed #D2D2D2;
+	bottom: -160rpx;
+	margin-left: -1rpx;
+}
+.kufuHead .logo-box{
+	position: absolute;
+	width:110rpx;
+	height: 110rpx;
+	background-color: white;
+	bottom:-50rpx;
+	margin-left:-50rpx;
+	left:50%;
+	box-shadow:0px 2px 6px rgba(175,26,58,0.49);
+	border-radius:8rpx;
+}
+.kufuHead .logo-box image{
+	width:100rpx;
+	height: 100rpx;
+	margin:5rpx;
+}
+.phone-box{
+	position: relative;
+	width:540rpx;
+	height: 106rpx;
+	line-height: 53rpx;
+	font-size:30rpx;
+	color:#212121;
+	padding: 35rpx 85rpx;
+	margin:200rpx auto 140rpx;
+	background-color: white;
+	border-radius: 88rpx;
+	box-shadow: 0 2rpx 12rpx rgba(210, 210, 210, 0.5);
+}
+.phone-box:before{
+	width:0;
+	height: 70rpx;
+	position: absolute;
+	content: "";
+	left:50%;
+	border-right:2rpx dashed #D2D2D2;
+	bottom: -110rpx;
+	margin-left: -1rpx;
+}
+.phone-btn{
+	width:108rpx;
+	height:108rpx;
+	border-radius: 50%;
+	margin:0 auto;
+	border:1rpx solid #AF1A3A;
+	background:white;
+	box-shadow:0 2rpx 8rpx rgba(175,26,58,0.38);
+}
+.phone-btn image{
+	width:50rpx;
+	height:50rpx;
+	margin:29rpx;
+}
+/* .phoneList{
+	margin-top:64rpx;
+}
+.phoneListItem{
+	margin-bottom:28rpx;
+	display: flex;
+	align-items: center;
+	padding:0 30rpx;
+}
+.phoneListItemExplain{
+	flex:1;
+	color:#212121;
+	font-size:30rpx;
+	line-height:72rpx;
+	display: flex;
+}
+.phoneListItemExplainIcon{
+	width:5rpx;
+	height: 36rpx;
+	margin-top: 18rpx;
+	margin-right:27rpx;
+}
+.phoneListItemExplainNumber{
+	width: 136rpx;
+}
+.phoneListItem image{
+	vertical-align: middle;
+	width:72rpx;
+	height: 72rpx;
+} */

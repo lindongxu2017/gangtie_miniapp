@@ -1,0 +1,49 @@
+<view class="fixed">
+    <!-- 头部 -->
+    <view class="muser">
+        <view class="weather">
+            <view>{{weather.weatherDesc}}（{{weather.currentCity}}）</view>
+            <view class="txt">{{weather.temperature}}</view>
+        </view>
+        <view class="slogan">
+            <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="name">
+            <open-data type="userNickName"></open-data>
+        </view>
+        <view class="sign-text">
+            <button data-url="/pages/sign/index" open-type="getUserInfo" bindgetuserinfo="wxlogin">立即签到</button>
+        </view>
+        <view class="hint">
+            <view class="text">
+                <view>
+                    <image src="/image/find.png"></image>
+                </view>
+                <view class="notice-play">
+                    <view id="notice-box" style="width:{{noticeWidth}};">
+                        <view id="notice" class="{{noticeAnimation?'noticeAnimation':''}}" style="width:{{noticeWidth}};animation-duration:{{noticeTime}}s;">
+                            <view class="notice-li">
+                                <text wx:for="{{notice}}" wx:key="{{index}}" class="notice-text">{{item}}</text>
+                            </view>
+                            <view class="notice-li">
+                                <text wx:for="{{notice}}" wx:key="{{index}}" class="notice-text">{{item}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <!-- 列表 -->
+    <view class="micon-flex">
+        <view wx:for="{{miconFlex}}" wx:key="{{index}}" class="list">
+            <navigator url="{{item.url}}" hover-class="none" bindtap="{{item.id==1 || item.id==7 || item.id==10 ? 'special' : ''}}" id="{{item.id}}">
+                <image src="{{item.icon}}"></image>
+                <text>{{item.title}}</text>
+            </navigator>
+            <button wx:if="{{item.id==5}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+            <button wx:if="{{item.id == 'login'}}" data-url="{{item.url}}" open-type="getUserInfo" bindgetuserinfo="wxlogin"></button>
+        </view>
+    </view>
+</view>

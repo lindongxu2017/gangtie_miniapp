@@ -1,0 +1,23 @@
+<!--pages/mall_news_detail/index.wxml-->
+<view class='content'>
+    <!-- <swiper autoplay>
+        <block wx:for="{{info.images}}" wx:key="{{index}}">
+            <swiper-item>
+                <image src="{{item}}" class='banner' mode='aspectFill'/>
+            </swiper-item>
+        </block>
+    </swiper> -->
+    <image class="img" src="{{info.logo}}"></image>
+    <view class='title'>{{info.name}}</view>
+    <view class='items'>
+        <view class='lable'>电话：</view>
+        <view class='value'>{{info.tel}}</view>
+    </view>
+    <view class='items'>
+        <view class='lable'>地址：</view>
+        <view class='value'>{{info.address}}</view>
+    </view>
+    <view class='line'></view>
+    <view class='cell-title'>店铺介绍</view>
+    <rich-text nodes="{{info.details}}"  class='desc'></rich-text>
+</view>

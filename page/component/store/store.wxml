@@ -1,0 +1,39 @@
+<swiper indicator-dots autoplay circular indicator-active-color="white" interval="4000" duration="1000">
+	<swiper-item bindtap="previewImage" wx:for="{{currentStore.images}}" wx:key="{{index}}">
+		<image mode='aspectFill' src="{{item}}"></image>
+	</swiper-item>
+</swiper>
+<view class="content header">
+	<view class="title">{{currentStore.name}}</view>
+	<view class="location-box">
+		<image src="/image/location.png"></image>
+		<view class="location" bindtap='openLocation'>{{currentStore.shop_addr}}</view>
+	</view>
+	<view wx:if="{{currentStore.mobile}}" class="border" bindtap="callPhone"><image src="/image/phone.png"></image>{{currentStore.mobile}}</view>
+</view>
+<view wx:if='{{currentStore.new_active}}'>
+	<view class="content publicTitle activity">
+		<view class="title">
+			<image src="/image/bang.png"></image>
+			<view>最新活动</view>
+			<image src="/image/bang.png"></image>
+		</view>
+	</view>
+	<view class="wxParse">
+		<import src="/wxParse/wxParse.wxml" />
+		<template is="wxParse" data="{{wxParseData:content1.nodes}}"/>
+	</view>
+</view>
+<view wx:if='{{currentStore.detail}}'>
+	<view class="content publicTitle introduce">
+		<view class="title">
+			<image src="/image/bang.png"></image>
+			<view>店铺简介</view>
+			<image src="/image/bang.png"></image>
+		</view>
+	</view>
+	<view class="wxParse">
+		<import src="/wxParse/wxParse.wxml" />
+		<template is="wxParse" data="{{wxParseData:content2.nodes}}"/>
+	</view>
+</view>

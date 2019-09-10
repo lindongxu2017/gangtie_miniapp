@@ -1,0 +1,28 @@
+<view class="songhui_item_bg">
+    <image src="/image/songhui_item3_bg.png" mode="aspectFill"></image>
+</view>
+
+<view class="songhui_item_content">
+    <view class="songhui_item_content_bottom">
+        <scroll-view scroll-y class="store_list" bindscrolltolower="scrolltolower">
+            <swiper wx:if="{{mapList.length > 0}}" class='swiper' indicator-dots autoplay circular interval="4000" duration="1000">
+                <swiper-item bindtap="previewImage" wx:for="{{mapList}}" wx:key="{{index}}">
+                    <image class='swiper-img' src="{{item.image}}" mode='widthFix'></image>
+                </swiper-item>
+            </swiper>
+            <navigator class="store_item {{item.logo_list.length > 1 ? 'padding_bottom' : ''}}" wx:for="{{list}}" wx:key="{{index}}" url="/page/component/store_selected_detail/store_selected_detail?id={{item.id}}" hover-class="none">
+                <view class="title public_ell1">{{item.title}}</view>
+                <view class="content {{item.logo_list.length == 1 ? 'flex' : ''}}">
+                    <view class="explain public_ell3 {{item.logo_list.length > 1 ? 'margin_bottom' : 'flex_1'}}">{{item.describe}}</view>
+                    <view class="{{item.logo_list.length > 1 ? 'img_arr' : 'img'}}" wx:if="{{item.logo_list.length > 0}}">
+                        <image lazy-load src="{{item}}" wx:for="{{item.logo_list}}" wx:key="{{index}}" mode="aspectFill"></image>
+                    </view>
+                </view>
+            </navigator>
+            <view class="empty" wx:if="{{list.length == 0}}">
+                <image src="/image/empty.png" mode='widthFix'></image>
+                <view class="txt">暂无活动~</view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

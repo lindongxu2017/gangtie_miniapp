@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "store": "/template/service_item/index"
+    },
+    "navigationBarTitleText": "服务设施"
+}

@@ -1,0 +1,11 @@
+/* pages/store/index.wxss */
+.list {
+    padding: 28rpx 7rpx;
+    font-size: 0;
+}
+.item {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 21rpx;
+}

@@ -1,0 +1,7 @@
+<!--pages/mall_news/index.wxml-->
+<view class='list'>
+    <view class='item' wx:for="{{list}}" wx:key="{{index}}">
+        <mall info="{{item}}"></mall>
+    </view>
+</view>
+

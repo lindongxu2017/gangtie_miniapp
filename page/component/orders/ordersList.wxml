@@ -1,0 +1,73 @@
+<view class="main">
+
+  <view class="swiper-tab">
+    <view wx:for="{{navList}}" wx:key="{{index}}" class="swiper-tab-item {{currentTab==index?'active':''}}" id="{{index}}" bindtap="clickTab">
+      {{item}}
+    </view>
+  </view>
+
+  <view hidden="{{currentTab!=0}}">
+    <view class="tabcont2">
+      	<block wx:for="{{multiList}}" wx:key>
+			<!-- <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{item.multiIndex}}" range="{{item.multiArray}}" id="{{index}}"></picker> -->
+			<navigator hover-class='none' url='/page/component/select_site/select_site?site_type={{index==0?"start":"end"}}' class="picker" style="color:{{item.multiValue[0] == '请'? '#6f6f6f' :'black'}}" bindtap="storage_sync">
+            	{{item.multiValue}}
+          	</navigator>
+      	</block>
+		  <!-- bindtap='tranfeFun' -->
+      <navigator hover-class='none' url="/page/component/search/search?start_station_id={{multiList[0].id}}&end_station_id={{multiList[1].id}}" class='cxbtn'><image src="/image/search.png"></image>搜索</navigator>
+		</view>
+	</view>
+
+	<view hidden="{{currentTab!=1}}">
+		<view class="tabcont">
+			<image class="sm" src="{{dtimg}}" id="{{dtimg}}" mode="widthFix" bindtap="previewImage"></image>
+		</view>
+	</view>
+
+	<view hidden="{{currentTab!=2}}">
+		<view class="tabcont3">
+			<view class="map_container"> 
+				<map scale='16' class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" show-location markers="{{markers}}" bindmarkertap="makerTap">
+					<cover-view class='foot' mode="widthFix" >
+						<cover-image src="../../../image/foot.png" />
+					</cover-view>
+				</map> 
+			</view>
+		</view>
+	</view>
+
+	<view hidden="{{currentTab!=3}}">
+		<view class="tabcont">
+			<image class="sm" src="{{smimg}}" id="{{smimg}}" mode="widthFix" bindtap="previewImage"></image>
+		</view>
+	</view> 
+
+	<view hidden="{{currentTab!=4}}">
+		<view class="kufuHead">
+			<view class="logo-box">
+				<image src="/image/gangtie.png"></image>
+			</view>
+		</view>
+		<view class="phone-box">如您对4号线有任何的建议或意见，请拨打热线电话：
+            <text style="color:{{phoneList[0].color}};">{{phoneList[0].tel}}</text>
+        </view>
+		<view class="phone-btn" bindtap="callPhone" id="3">
+			<image src="/image/phone_color.png"></image>
+		</view>
+
+		<!-- <view class="phoneList">
+			<view class="phoneListItem" wx:for="{{phoneList}}" wx:key="{{index}}" wx:if="{{index==3}}">
+				<view class="phoneListItemExplain">
+					<view class="phoneListItemExplainIcon" style="background-color:{{item.color}};"></view>
+					<view class="phoneListItemExplainNumber">{{item.name}}</view>
+					<view class="phoneListItemExplainPhone">{{item.tel}}</view>
+				</view>
+				<view bindtap="callPhone" id="{{index}}"><image src="../../../image/phoneListItemImg.png"></image></view>
+			</view>
+		</view> -->
+	</view>
+
+	<image src='../../../image/foot.png' class='foot' mode="widthFix"></image>
+  
+</view>

@@ -1,0 +1,71 @@
+<!--pages/service/index.wxml-->
+<view class="search-wrapper">
+    <view class="content">
+        <view class="circle"></view>
+        <input placeholder="请输入地点" bindinput="searchinput" bindconfirm="search_station" confirm-type="search" placeholder-class="placeholder-style"></input>
+        <image class="icon-search" catchtap="search_station" src="/icon/search.png"></image>
+    </view>
+    <image class="icon-switch" src="/icon/switch.png" bindtap="goline"></image>
+</view>
+<scroll-view class="scroll-view" scroll-top="{{currentTarget.y - 180}}" scroll-left="{{currentTarget.x - 180}}" scroll-y scroll-x>
+    <view class='img-wrapper'>
+        <image bindtouchstart='mapmove' class='img' src='http://gangtietest.qinhantangtop.com/public/station_img.png' style='width: {{1614 * scale}}px; height: {{1316 * scale}}px'></image>
+        <view id="{{item.id}}" class='point {{item.is_active ? "active" : ""}}' style='left: {{item.x * scale}}px; top: {{item.y * scale}}px; width: {{35 * scale}}px; height: {{35 * scale}}px; transform: translate(-{{17.5 * scale}}px, -{{17.5 * scale}}px);' wx:for="{{list}}" wx:key="{{index}}"
+            data-index="{{index}}" catchtap='select'>
+        </view>
+
+        <image class='select-btn-icon' style="top: {{currentTarget.y}}px; left: {{currentTarget.x}}px;" wx:if="{{currentTarget}}" src='/icon/btn.png'></image>
+
+        <view class='form' wx:if="{{showForm}}" catchtap='{{false}}' style='left: {{(currentTarget.x + 17.5) * scale + 7.5}}px; top: {{currentTarget.y * scale}}px;transform: {{(1614 - currentTarget.x) * scale > 130 ? "" : "translateX("+ (-70*scale-130) +"px)"}} {{(1316 - currentTarget.y) * scale > 217 ? "translateY(-30%)" : "translateY(-100%)"}}'>
+            <view class='control'>
+                <image class='lable' src='/icon/start.png'></image>
+                <view class='text' catchtap='start_station'>{{start_station_text}}</view>
+            </view>
+            <view class='control'>
+                <image class='lable' src='/icon/end.png'></image>
+                <view class='text' catchtap='end_station'>{{end_station_text}}</view>
+            </view>
+            <view class='control' wx:if="{{currentTarget.line_name == '4号线'}}">
+                <image class='lable' src='/icon/time.png'></image>
+                <view class='text' data-type="3" catchtap="servise">服务时间</view>
+            </view>
+            <view class='control' wx:if="{{currentTarget.line_name == '4号线'}}">
+                <image class='lable' src='/icon/house.png'></image>
+                <view class='text' data-title="服务设施" data-api="/api/station/facilities" catchtap="godetail">服务设施</view>
+            </view>
+            <view class='control' wx:if="{{currentTarget.line_name == '4号线'}}">
+                <image class='lable' src='/icon/support.png'></image>
+                <view class='text' data-type="4" catchtap="servise">客服中心</view>
+            </view>
+            <view class='control' wx:if="{{currentTarget.line_name == '4号线'}}">
+                <image class='lable' src='/icon/house.png'></image>
+                <view class='text' data-title="游玩攻略" data-api="/api/strategy/details" catchtap="godetail">游玩攻略</view>
+            </view>
+            <view class='control' wx:if="{{currentTarget.line_name == '4号线'}}">
+                <image class='lable' src='/icon/house.png'></image>
+                <view class='text' data-title="公交信息" data-api="/api/station/bus_info" catchtap="godetail">公交信息</view>
+            </view>
+            <!-- <view class='control'>
+                <image class='lable' src='/icon/house.png'></image>
+                <view class='text' data-title="清除缓存" data-api="/api/station/bus_info" catchtap="clearstorage">清除缓存</view>
+            </view> -->
+            <view class='closepopup'>
+                <image catchtap="clsoepopup" class='lable' src='/icon/delete.png'></image>
+            </view>
+            
+        </view>
+    </view>
+</scroll-view>
+
+<view class="location-wrapper">
+    <image src="/icon/location.png"></image>
+</view>
+
+<!-- <view class='scale-wraper'>
+    <view class='scale-btn' catchtap='plus'>
+        <image src='/icon/plus.png'></image>
+    </view>
+    <view class='scale-btn' catchtap='reduce'>
+        <image src='/icon/reduce.png'></image>
+    </view>
+</view> -->

@@ -1,0 +1,16 @@
+<!--pages/mall/index.wxml-->
+<view class='list'>
+    <view class='item' wx:for="{{list}}" wx:key="{{index}}">
+        <image class='banner' src='{{item.img}}'></image>
+        <view class='title'>
+            <view class='name'>{{item.name}}</view>
+            <view class='intro'>{{item.intro}}</view>
+        </view>
+        <view class='addr'>
+            <image class='icon' src='/icon/aui-icon-location.png'></image>
+            <view>地址：</view>
+            <view class='text'>{{item.addr}}</view>
+        </view>
+        <view class='desc'>{{item.desc}}</view>
+    </view>
+</view>

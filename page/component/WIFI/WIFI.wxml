@@ -1,0 +1,9 @@
+<!-- <view class="list">
+	<view class="item" wx:for="{{secList}}" wx:key="{{index}}">
+		<view class="name">{{item.name}}</view>
+		<view>
+			<image src="{{'/image/WIFI'+item.strength+'.png'}}"></image>
+		</view>
+	</view>
+</view> -->
+<image class="bg" src="https://gangtie.qinhantangtop.com/public/images/wifi.jpg" mode="widthFix"></image>

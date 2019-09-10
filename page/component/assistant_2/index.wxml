@@ -1,0 +1,46 @@
+<!--page/component/assistant_2/index.wxml-->
+<view class="scroll-wrapper">
+    <scroll-view scroll-y scroll-with-animation scroll-top="{{scrollTop}}" class="scroll-view">
+        <view class="list">
+            <view class="item {{item.data_type == 2 ? 'reverse' : ''}}" wx:for="{{list}}" wx:key="{{index}}">
+                <view wx:if="{{item.data_type != 2}}" class="user-avatar">
+                    <image  class="avatar" mode="aspectFill" src="/image/gangtie.png"></image>
+                </view>
+                <view wx:else class="user-avatar">
+                    <open-data type="userAvatarUrl" class="avatar"></open-data>
+                </view>
+                <view class="content">
+                    <view data-item="{{item}}" bindtap="golink" class="content-text title {{item.path ? 'line' : ''}}">{{item.content}}</view>
+                    <view class="content-text" wx:if="{{item.data_type == -1}}">
+                        <view class="subtitle">{{item.subtitle}}</view>
+                        <view class="question-item" wx:for="{{item.list}}" wx:for-item="obj" wx:for-index="order" wx:key="{{order}}">{{obj.number}}.{{obj.title}}</view>
+                    </view>
+                    <view wx:if="{{item.data_type == 1}}" class="content-text text"></view>
+                    <view class="content-text" wx:if="{{item.type == 'line'}}" data-item="{{item}}" catchtap="gosearch">
+                        <view class="lines">
+                            <view class="line-text" wx:for="{{item.line}}" wx:for-item="obj" wx:for-index="order" wx:key="{{order}}">
+                                <text>{{obj.line}}</text>
+                                <image class="station-arrow" wx:if="{{order != item.line.length - 1}}" src="/image/right_b2.png"></image>
+                            </view>
+                        </view>
+                        <view class="line-nums">
+                            <view>起点：{{item.info.start_station.name}}</view>
+                            <view class="line-nums-text">
+                                <view class="rotate">{{item.num}}</view>
+                                <view>站</view>
+                            </view>
+                            <view>终点：{{item.info.end_station.name}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="message-box">
+	<view class="message-input">
+		<input bindfocus="focus" confirm-hold confirm-type="send" bindinput="input" value="{{value}}" bindconfirm="sendOut" cursor-spacing="8"></input>
+    	<view class="input-bg"></view>
+		<view class="sendOut" bindtap="sendOut">发送</view>
+	</view>
+</view>

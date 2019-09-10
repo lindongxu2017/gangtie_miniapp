@@ -1,0 +1,49 @@
+<!--pages/sign/luck_draw.wxml-->
+<view class='cell-title'>积分大抽奖</view>
+
+<view class='luck'>
+    <image class='luck-bg' mode='widthFix' src='/icon/luck_panel.png'></image>
+    <view class='content'>
+        <view class='items' wx:for="{{goodslist}}" data-index="{{index}}" wx:key="{{index}}" bindtap='draw'>
+            <view class='text' wx:if="{{index == 4}}">抽奖</view>
+            <view class='consume' wx:if="{{index == 4}}">消耗{{need}}积分</view>
+            <image class='icon' src='{{item.goods_img}}' wx:if="{{index != 4}}"></image>
+            <view class='score' wx:if="{{index != 4}}">{{item.name}}</view>
+        </view>
+        <view class='high-move' wx:if="{{is_begin}}">
+            <view class='box'>
+                <view class='move-block' style='transform: translate({{x}}, {{y}}); transition: all {{timer}}s ease;'></view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='mask' wx:if="{{popupVisible}}" catchtouchmove="{{false}}">
+    <view class='popup'>
+        <image class='luck-img' src='/icon/luck-popup.png' mode='widthFix'></image>
+        <view class='popup-luck-box'>
+            <view class='luck-text'>恭喜你获得{{luck_info.name}}</view>
+            <view class='luck-name'>
+                <input data-key="form.name" placeholder-style="font-size: 14px;" placeholder="{{result.is_info == 1 ? '直接领取' : '请输入'}}" disabled="{{result.is_info == 1}}" bindinput='input'></input>
+            </view>
+            <view class='luck-phone'>
+                <input data-key="form.tel" placeholder-style="font-size: 14px;" placeholder="{{result.is_info == 1 ? '直接领取' : '请输入'}}" disabled="{{result.is_info == 1}}" bindinput='input'></input>
+            </view>
+            <view class='luck-confirm' bindtap='get_luck'></view>
+            <view class='luck-close' data-pointer="1" bindtap='cancel'></view>
+        </view>
+    </view>
+</view>
+
+<view class='list-cell-title'>我的奖品</view>
+
+<view class='list'>
+    <view class='tr'>
+        <view class='th'>中奖时间</view>
+        <view class='th'>所中奖品</view>
+    </view>
+    <view class='tr' wx:for="{{list}}" wx:key="{{index}}">
+        <view class='td'>{{item.create_time}}</view>
+        <view class='td prize'>{{item.name}}</view>
+    </view>
+</view>

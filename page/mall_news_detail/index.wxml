@@ -1,0 +1,18 @@
+<!--pages/mall_news_detail/index.wxml-->
+<view class='content'>
+    <image class='banner' src='{{info.img}}' mode='aspectFill'></image>
+    <view class='title'>{{info.name}}</view>
+    <view class='items'>
+        <view class='lable'>电话：</view>
+        <view class='value'>{{info.phone}}</view>
+    </view>
+    <view class='items'>
+        <view class='lable'>地址：</view>
+        <view class='value'>{{info.addr}}</view>
+    </view>
+    <view class='line'></view>
+    <view class='cell-title'>优惠活动</view>
+    <view class='discount'>全场商品满50减20；满100减50，活动截止时间到8月 8日</view>
+    <view class='cell-title'>店铺介绍</view>
+    <view class='desc'>{{info.desc}}</view>
+</view>

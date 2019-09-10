@@ -1,0 +1,16 @@
+<!--pages/discount/index.wxml-->
+<view class='list'>
+    <view class='item' wx:for="{{list}}" wx:key="{{index}}">
+        <image src='/icon/discount_bg.png' mode='widthFix'></image>
+        <view class='box'>
+            <view class='content'>
+                <view class='name'>{{item.shop_name}}</view>
+                <view class='discount'>{{item.title}}</view>
+                <view class='end_time'>{{item.activity_end}}</view>
+                <view class='confirm' data-id="{{item.shop_id}}" catchtap="godetail">到店体检</view>
+            </view>
+            <view class='station'>{{item.name}}</view>
+        </view>
+    </view>
+</view>
+<view class="no-data" wx:if="{{list.length == 0}}">暂无数据</view>

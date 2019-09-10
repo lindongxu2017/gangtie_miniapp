@@ -1,0 +1,66 @@
+<!--pages/suggest/index.wxml-->
+<view class='tabs'>
+    <view class='tab-item {{tab_active == 0 ? "active" : ""}}' data-type="0" bindtap='switchType'>表扬</view>
+    <view class='tab-item {{tab_active == 1 ? "active" : ""}}' data-type="1" bindtap='switchType'>建议</view>
+    <view class='tab-item {{tab_active == 2 ? "active" : ""}}' data-type="2" bindtap='switchType'>咨询</view>
+</view>
+<view class='type-wrapper'>
+    <picker wx:if="{{tab_active != 1}}" bindchange="changType" value="{{type_active}}" range="{{type}}" range-key='name'>
+        <view class="picker {{type_active ? '' : 'none'}}">{{type_active ? type[type_active].name : '请选择服务类型'}}</view>
+        <image class="down-icon" src="/icon/down.png"></image>
+    </picker>
+
+    <picker wx:else mode="multiSelector" bindchange="type_change" bindcolumnchange="type_column_change" value="{{type_multiIndex}}" range="{{type_column}}" range-key='name'>
+        <view class="picker">{{type_column[0][type_multiIndex[0]].name}}，{{type_column[1][type_multiIndex[1]].name}}</view>
+        <image class="down-icon" src="/icon/down.png"></image>
+    </picker>
+</view>
+<view class='content'>
+    <textarea data-key="form.content" bindblur="inputvalue" class='textarea' auto-height placeholder-class='textarea-placeholder' placeholder="{{ tab_active == 0 ? '请输入您的评价内容' : tab_active == 1 ? '请输入您的评价内容（描述越详细，越有利于我们快速解决您的问题，如：列车方向|站台编号|车门编号|屏蔽门编号等' : '请输入您的咨询内容' }}" />
+</view>
+<view class='form'>
+    <view class='control'>
+        <view class='lable'>时间</view>
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+            <view class="picker">{{date}}</view>
+            <image class="down-icon" src="/icon/down.png"></image>
+        </picker>
+    </view>
+    <view class="control">
+        <view class='upload-wrapper'>
+            <block wx:for="{{preViewList}}" wx:key="{{index}}">
+                <view>
+                    <image class='preview' src='{{item}}' data-index='{{index}}' mode='aspectFill' bindtap='preview'></image>
+                    <image class='del' src='/icon/delete.png' data-index='{{index}}' catchtap='del'></image>
+                </view>
+            </block>
+            <view>
+                <image class='preview' src='/icon/upload.png' mode='widthFix' bindtap='uploadImg'></image>
+            </view>
+        </view>
+    </view>
+    <view class='cell-title'>个人信息填写</view>
+    <view class='control'>
+        <view class='lable'>姓名 (必填)</view>
+        <input class='value' placeholder='请输入' data-key="form.name" bindinput="inputvalue"></input>
+    </view>
+    <view class='control'>
+        <view class='lable'>联系方式 (必填)</view>
+        <input class='value' placeholder='请输入' data-key="form.contact" bindinput="inputvalue"></input>
+    </view>
+    <view class='control' wx:if="{{tab_active == 0}}">
+        <view class='lable'>获表扬职员</view>
+        <input class='value' placeholder='请输入' data-key="form.staff_name" bindinput="inputvalue"></input>
+    </view>
+    <view class='control'>
+        <view class='lable'>所在车站</view>
+        <!-- <input class='value' placeholder='请输入' data-key="form.station" bindinput="inputvalue"></input> -->
+        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}" range-key="name">
+            <view class="picker">
+                {{multiArray[0][multiIndex[0]].name}}，{{multiArray[1][multiIndex[1]].name}}
+            </view>
+            <image class="down-icon" src="/icon/down.png"></image>
+        </picker>
+    </view>
+    <view class="btn-submit" bindtap="submit">提交</view>
+</view>

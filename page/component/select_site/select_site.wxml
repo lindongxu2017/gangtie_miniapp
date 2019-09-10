@@ -1,0 +1,23 @@
+<view class="search_list" style="display:{{search_list.length!=0?'block':'none'}};height:{{windowHeight - 150}}px;">
+	<view class="search_item" wx:for="{{search_list}}" wx:key bindtap="select_site_close" id="{{site_type}},{{item.lines[0].nub - 1}},{{item.name}},{{item.station_id}}">
+		<view class="site">{{item.name}}</view>
+		<view class="line" wx:for="{{item.lines}}" wx:key style="background-color:{{item.color}};">{{item.title}}</view>
+	</view>
+</view>
+<view class="black_screen" style="display:{{search_list.length!=0?'block':'none'}};"></view>
+<view class="search">
+	<image class="search_img" src="/image/search_ccc.png"></image>
+	<image class="close_img" src="/image/close.png" bindtap="search_close" wx:if="{{search.length>0}}"></image>
+	<input placeholder='搜索站点' bindinput="search" value='{{search}}'></input>
+</view>
+<view class="select_site">
+	<view class="line_list" style="max-height:{{windowHeight - 40}}px;">
+		<view class="line_item {{index==line_list_index?'active':''}}" wx:for="{{line_list}}" wx:key style="color:{{index==line_list_index?item.color:'black'}};border-left-color:{{index==line_list_index?item.color:'transparent'}};" bindtap="line_list_index_tab" id="{{index}}">
+			<view class="color" style="background-color:{{item.color}};"></view>
+			<view>{{item.title}}</view>
+		</view>
+	</view>	
+	<view class="site_list" style="max-height:{{windowHeight - 40}}px;">
+		<view bindtap="select_site_close" class="site_item" wx:for="{{site_list}}" wx:key id="{{site_type}},{{line_list_index}},{{item.name}},{{item.station_id}}">{{item.name}}</view>
+	</view>
+</view>

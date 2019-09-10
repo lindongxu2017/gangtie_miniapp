@@ -1,0 +1,10 @@
+<view>
+	<view class="tel_list_page">
+		<view class="tel_list">
+			<view class="tel_item" wx:for="{{tel_list}}" wx:key>
+				<view class="tel_item_title">{{item.title}}</view>
+				<view class="tel_item_number" bindtap="tel" id="{{item.number}}">{{item.number}}</view>
+			</view>
+		</view>
+	</view>
+</view>

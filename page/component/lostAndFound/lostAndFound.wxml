@@ -1,0 +1,20 @@
+<view class="item" wx:for="{{list}}" wx:key="{{index}}">
+	<view class="sec-box">
+		<view class="sec">
+			<view class="title">{{item.ShortDesc}}</view>
+			<view class="time">发现时间：{{item.FoundTime}}</view>
+			<view class="location">领取站点：{{item.FoundLoc}}</view>
+		</view>
+	</view>
+</view>
+<view class="explain-box">
+	<view class="explain">
+		<view style="display:flex;">
+			<view><image src="/image/hint.png"></image></view>
+			<view>您在搭乘港铁（深圳）4号线时，如遗失物品，可以在这里寻找并到失物所在站点认领失物，或者直接到车站控制室寻求帮助，如在4号线范围内拾获任何物品，您也可以交予该车站的港铁（深圳）职员，我们很乐意帮助您！</view>
+		</view>
+		<view style="text-align:right;">
+			<navigator hover-class='none' url="/page/component/tel_list/tel_list" style="display:inline-block;">请联系我们<image src="/image/right.png" style="margin-left:5rpx;"></image></navigator>
+		</view>
+	</view>
+</view>

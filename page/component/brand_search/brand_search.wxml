@@ -1,0 +1,55 @@
+<view class="songhui_item_bg">
+	<image src="/image/songhui_item_bg.png" mode="aspectFill"></image>
+</view>
+<view class="songhui_item_content">
+	<view class="songhui_item_content_top">
+		<view class="search_box">
+			<view class="select">
+				<view>
+					<picker bindchange="floor_select" range="{{floor_select_list}}">{{floor_select_list[floor_index] == "全部" ? "楼层" : floor_select_list[floor_index]}}<image src="/image/songhui_bottom.png"></image></picker>
+				</view>
+			</view>
+			<view class="search">
+				<image src="/image/songhui_search.png"></image>
+				<input bindinput="search" placeholder='请输入关键词' value="{{keyword}}" confirm-type="search" bindconfirm="confirm"></input>
+				<image bindtap="search_del" wx:if='{{keyword.length != 0}}' src="/image/songhui_close.png"></image>
+			</view>
+		</view>
+		<view class="tab_list">
+			<view class="tab_item tab_item1 {{tab_index == 0 ? 'active' : ''}}" id="0" bindtap="index_tab">品类业态</view>
+			<view class="tab_item tab_item2 {{tab_index == 1 ? 'active' : ''}}" id="1" bindtap="index_tab">楼层图</view>
+		</view>
+	</view>
+	<view class="songhui_item_pd">
+		<image src="/image/songhui_item_pd2.png" mode="aspectFill"></image>
+	</view>
+	<view class="songhui_item_content_box">
+		<view class="category" hidden='{{tab_index == 1}}'>
+			<view class="type_list">
+				<view id="{{item.id}}" bindtap="type_tab" class="type_item" wx:for="{{type_list}}" wx:key="{{index}}">{{item.name}}</view>
+			</view>
+			<scroll-view scroll-y bindscrolltolower="scrolltolower" style="height:calc(100% - {{surplus}}rpx);">
+				<view class="store_list">
+					<navigator class="store_item" wx:for="{{list}}" wx:key="{{index}}" hover-class='none' url="/page/component/store_selected_detail2/store_selected_detail2?id={{item.id}}">
+						<view class="item_img">
+							<image lazy-load class="img" src="{{item.logo}}"></image>
+							<!-- <image class="box" src="/image/square_box.png"></image> -->
+						</view>
+						<view>
+							<view class="title">{{item.name}}</view>
+							<view class="explain public_ell2">{{item.describe}}</view>
+						</view>
+					</navigator>
+				</view>
+			</scroll-view>
+		</view>
+		<view class="floor_plans" hidden='{{tab_index == 0}}'>
+			<block wx:if="{{floor_index == 0}}">
+				<image src='{{item.image}}' style="height:{{item.image_height}}rpx;" wx:for="{{floor_list}}" wx:key wx:if="{{index != 0}}" bindtap="previewImage" id="{{item.image}}"></image>
+			</block>
+			<block wx:else>
+				<image src='{{floor_list[floor_index].image}}' style="height:{{floor_list[floor_index].image_height}}rpx;" bindtap="previewImage" id="{{floor_list[floor_index].image}}"></image>
+			</block>
+		</view>
+	</view>
+</view>

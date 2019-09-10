@@ -1,0 +1,20 @@
+<!--pages/mall_news_detail/index.wxml-->
+<view class='content'>
+    <image class="img" mode="widthFix" src="{{info.img_url}}"></image>
+    <view class='title'>{{info.name}}</view>
+    <view class='items'>
+        <view class='lable'>电话：</view>
+        <view class='value'>{{info.tel}}</view>
+    </view>
+    <view class='items'>
+        <view class='lable'>地址：</view>
+        <view class='value'>{{info.address}}</view>
+    </view>
+    <view class='line'></view>
+    <view class='cell-title'>服务信息</view>
+    <!-- <view wx:for="{{info.coupon_list}}" wx:key="{{index}}">
+        <view class='discount'>{{item.title}}{{item.activity_end}}</view>
+        <view class='cell-title'>店铺介绍</view>
+    </view> -->
+    <rich-text nodes="{{info.content}}"  class='desc'></rich-text>
+</view>
